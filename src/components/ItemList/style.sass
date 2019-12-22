@@ -6,29 +6,33 @@ $separator-height: 1px
   display: grid
   grid-template-columns: repeat(3, 1fr)
   grid-gap: 16px
-  padding: 0 $padding-content-h 48px
 
 .list
   flex: 1
-  font-size: 48px
-  border: 1px solid #404040
-  list-style: none
+  border: 1px solid $color-primary
   padding: 0
   margin: 0
+
+  &:last-child > .listItem:after
+    width: 100%
+
+.listItem
+  list-style: none
+
+  &:not(:last-child):after
+    content: ''
+    display: block
+    background-color: $color-accent
+    height: 1px
+    width: calc(100% + 16px)
+
+.itemLabel
+  display: block
+  font-size: clamp(12px, 48px, 7vw)
+  color: $color-text
+  padding: 0.5em 0
   text-align: center
-  color: #d3d3d3
-
-  & > li:not(:last-child)
-    padding-bottom: $separator-height
-
-    &:after
-      content: ''
-      display: block
-      background-color: $color-accent
-      height: $separator-height
-      width: calc(100% - 48px)
-      position: absolute
-      left: $padding-content-h
+  word-break: break-all
 
 .hover
   background-color: $color-bg-hover

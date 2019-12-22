@@ -26,10 +26,21 @@ const ItemInput = () => {
 
   return (
     <div className={classes.itemInputContainer}>
-      <input onChange={handleChange} onKeyDown={onKeyDown} value={value} />
-      <button disabled={!value.trim()} onClick={handleClick}>
-        <Plus />
-      </button>
+      <div className={classes.inputWrapper}>
+        <input
+          className={classes.input}
+          onChange={handleChange}
+          onKeyDown={onKeyDown}
+          value={value}
+        />
+        <button
+          className={classes.button}
+          disabled={!value.trim()}
+          onClick={handleClick}
+        >
+          <Plus />
+        </button>
+      </div>
     </div>
   );
 };

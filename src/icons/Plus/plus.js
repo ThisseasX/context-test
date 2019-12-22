@@ -1,9 +1,8 @@
 import React from 'react';
 
 const Plus = () => (
-  <svg>
-    <path d="M24 8 L24 40 Z" />
-    <path d="M8 24 L40 24 Z" />
+  <svg viewBox="0 0 24 24">
+    <path d="M10 0h4v10h10v4h-10v10h-4v-10h-10v-4h10z"></path>
   </svg>
 );
 

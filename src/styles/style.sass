@@ -7,6 +7,12 @@ body
 
 html
   box-sizing: border-box
+  font-size: clamp($font-size-min, $font-size-max, 4vw)
+  font-family: sans-serif
+
+body
+  background-color: $color-bg
+  min-height: 100vh
 
 *,
 *:before,
