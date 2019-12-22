@@ -13,9 +13,6 @@ $separator-height: 1px
   padding: 0
   margin: 0
 
-  &:last-child > .listItem:after
-    width: 100%
-
 .listItem
   list-style: none
 
@@ -24,7 +21,9 @@ $separator-height: 1px
     display: block
     background-color: $color-accent
     height: 1px
-    width: calc(100% + 16px)
+    position: absolute
+    left: 24px
+    width: calc(100% - 48px)
 
 .itemLabel
   display: block
