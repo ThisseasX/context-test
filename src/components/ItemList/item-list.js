@@ -7,7 +7,7 @@ const ItemList = ({ items: itemsFromHoc }) => {
   const [hoverIndex, setHoverIndex] = useState(null);
   const { items: itemsFromHook } = useItems();
 
-  const itemList = useRef();
+  const itemListRef = useRef();
 
   const handleMouseEnter = useCallback(
     ({
@@ -23,15 +23,25 @@ const ItemList = ({ items: itemsFromHoc }) => {
     setHoverIndex(null);
   });
 
+  const needsScrolling = useCallback(
+    el => el && el.getBoundingClientRect().bottom >= window.innerHeight,
+  );
+
   useEffect(() => {
-    const { children } = itemList.current;
+    const { children } = itemListRef.current;
     const lastChild = children[children.length - 1];
-    lastChild && lastChild.scrollIntoView({ behavior: 'smooth' });
+
+    if (needsScrolling(lastChild)) {
+      window.scrollTo({
+        top: document.body.scrollHeight,
+        behavior: 'smooth',
+      });
+    }
   }, [itemsFromHook]);
 
   return (
     <div className={classes.itemListContainer}>
-      <ul ref={itemList} className={classes.list}>
+      <ul ref={itemListRef} className={classes.list}>
         <ItemContext.Consumer>
           {value =>
             value.items.map((item, index) => (
