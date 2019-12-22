@@ -57,4 +57,4 @@ module.exports={};
 },{}],"Focm":[function(require,module,exports) {
 "use strict";var e=u(require("react")),r=require("react-dom"),t=u(require("./components/App"));function u(e){return e&&e.__esModule?e:{default:e}}require("/styles/style"),(0,r.render)(e.default.createElement(t.default,null),document.getElementById("root"));
 },{"react":"n8MK","react-dom":"NKHc","./components/App":"LLke","/styles/style":"JxZf"}]},{},["Focm"], null)
-//# sourceMappingURL=https://thisseasx.github.io/react-context-test/src.07623417.js.map
+//# sourceMappingURL=https://thisseasx.github.io/react-context-test/src.24ff5958.js.map
